@@ -1,4 +1,4 @@
-# Help wymco with his page
+# Website template
 
 This project was created to help the reddit user wymco with his webpage. It can be used as a template for new webpages.
 
@@ -8,6 +8,7 @@ This project was created to help the reddit user wymco with his webpage. It can 
 - Four static pages to present your company
 - A blog where you can write articles and visiters can leave comments
 - Admin menu where you can add and edit articles and approve comments
+- Tests for all the pages and model functions
 
 A demo page can be seen here: https://wymco.herokuapp.com/
 
