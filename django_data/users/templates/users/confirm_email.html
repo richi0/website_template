@@ -1,0 +1,21 @@
+{% extends 'pages/_base.html' %} 
+{% load i18n %}
+{% load account %}
+{% load crispy_forms_tags %}
+{% block title %}Confirm Email{% endblock title %}
+{% block content %}
+<h2>
+    Confirm Email
+</h2>
+{% if confirmation %}
+{% user_display confirmation.email_address.user as user_display %}
+<p>Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.</p>
+<form method='post' action="{% url 'account_confirm_email' confirmation.key %}">
+  {% csrf_token %} {{form|crispy}}
+  <button class="btn btn-primary mt-2" type='submit'>Confirm Email</button>
+</form>
+{% else %}
+{% url 'account_email' as email_url %}
+<p>This e-mail confirmation link expired or is invalid.</p> 
+{% endif %}
+{% endblock content %}

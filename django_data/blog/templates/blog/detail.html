@@ -1,0 +1,39 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='container'>
+    <h1 class="text-center">{{ object.title }}</h1>
+    <p class="text-center">by {{ object.author }} on {{ object.created_at|date:"D d M Y" }}</p>
+    <p>{{ object.preface|linebreaksbr}}</p>
+    <div class="text-center head-image">
+        <img src="{{ object.image }}" class="img-fluid my-4 cover-image shadow-lg" alt="cover">
+    </div>
+    {% for paragraph in object.paragraphs.all %}
+        <h3 class="mt-4">{{ paragraph.title }}</h3>
+        <p>{{ paragraph.content|linebreaksbr}}</p>
+    {% endfor %}
+    <div class="container text-center">
+        <b>Share:</b> 
+        {% include "blog/share_buttons.html" %}
+    </div>
+    <p class="contact-divider bg-primary my-5"></p>
+    {% if object.comments.all %}
+        <h2 class="text-center">Comments</h2>
+        {% for comment in object.comments.all %}
+            {% if comment.approved %}
+                <div class="comment shadow my-3 p-3 rounded">
+                    <p><b>by {{ comment.name }} on {{ comment.created_at|date:"D d M Y" }}</b></p>
+                    <p>{{ comment.content|linebreaksbr }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <h3>Write a comment</h3>
+    <form action="{% url 'create_comment' object.pk %}"  method="post" class="comment_form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Post comment</button>
+    </form>
+</div>
+{% endblock content %}

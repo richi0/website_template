@@ -1,0 +1,8 @@
+<div class="fb-share-button" data-href="{{ request.scheme }}://{{ request.get_host }}{{ object.get_absolute_url }}" data-layout="button_count" data-size="small">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+<a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?url={{ request.scheme }}://{{ request.get_host }}{{ object.get_absolute_url }}">Tweet</a>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="{{ request.scheme }}://{{ request.get_host }}{{ object.get_absolute_url }}"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v8.0" nonce="8u3Q96ie"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

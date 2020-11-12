@@ -1,0 +1,150 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+{% block content %}
+<div class='container'>
+  <img
+    class='img-fluid mb-4'
+    src="{% static 'images/header.png' %}"
+  />
+</div>
+<div class="divider d-flex justify-content-center">
+  <p class="divider-text align-self-center text-center">
+    Wymco Consulting offers bookkeeping and IT consulting to builders in Canada and USA.
+  </p>
+</div>
+<div id='services' class="container">
+  <div class="row justify-content-evenly">
+    <div class="col-md-6 my-3 ">
+      <h2>
+        Bookkeeping
+      </h2>
+      <p>
+        One thing is clear in business: Bookkeeping is one of the most important
+        tasks for the success of your business. We have worked with multiple small-business,
+        in different markets. Whether on site or virtually, Wymco Consulting helps your mitigate
+        tax, save time, and keep you compliant.
+      </p>
+    </div>
+    <div class="col-md-6 my-3 d-flex justify-content-center">
+      <img
+        alt='image wymco quickbook'
+        src="{% static '/images/wymco_consulting_badge_quickbook.png' %}"  
+        width='150'
+        class="shadow-lg rounded"
+      />
+    </div>
+  </div>
+  <div class="row justify-content-evenly">
+    <div class="col-md-6 my-3">
+      <h2>
+        Technology Consulting
+      </h2>
+      <p>
+        New technologies are impacting business operations daily, and competition is
+        more than ever fierce. From your website to the best applications,
+        we will assist streamline operations, and by implementing client-centric
+        improvements for your business to be efficient and to save cost.
+        Whether on site or virtually, Wymco Consulting helps your mitigate 
+        tax, save time, and keep you compliant.
+      </p>
+    </div>
+    <div class="col-md-6 my-3 d-flex justify-content-center">
+      <img
+        alt='image IT support'
+        class='shadow-lg rounded'
+        src="{% static 'images/certificate.png' %}"
+        width='200'
+        height='180'
+      />
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <h2>
+        and more...
+      </h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <p class="text-center">
+        In addition to our main offers, you can add the services below a la carte, at a competitive price.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-evenly">
+    <div class="col-auto">
+      <div class="card p-2 m-3 shadow-lg" style="width: 18rem;">
+        <img src="{% static '/images/009-report.svg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Financial Insight</h5>
+          <p class="card-text">
+            Financial statements tell more than financial position. We will
+            study your statements and give you actionable steps to address 
+            issues impacting your business.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card p-2 m-3 shadow-lg" style="width: 18rem;">
+        <img src="{% static '/images/010-payroll.svg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Payroll</h5>
+          <p class="card-text">
+            You might have few employees already. We will help with deductible and tax payments,
+            while keeping them happy with timely deposits.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card p-2 m-3 shadow-lg" style="width: 18rem;">
+        <img src="{% static '/images/011-account.svg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Account Receivable & Payable</h5>
+          <p class="card-text">
+            Waiting until the end of project to get paid stresses your 
+            mind and your finances. Our timely reporting will manage your 
+            account payable and receivable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="divider d-flex justify-content-center">
+  <p class="divider-text align-self-center text-center">
+    Easy onboarding - Quality Guarantee - Contact us today.
+  </p>
+</div>
+<div id="about" class="container my-4" >
+  <div class="row justify-content-evenly">
+    <div class="col-md-6 d-flex justify-content-center">
+    <img
+      alt='image founder'
+      class='img-fluid mb-4 rounded-lg shadow-lg'
+      src="{% static '/images/founder.png' %}"
+    />
+    </div>
+    <div class="col-md-6">
+        <h2 class="text-center">Excellence - Integrity - Teamwork.</h2>
+        <br />
+        <p class="text-center">
+          A finance graduate with years of experience in the finance industry, 
+          Youssouf has worked with many contractors and small construction
+          companies to align their accounting and bookkeeping. 
+          His experience in business process analysis allows him
+          to help streamline your business processes.
+        </p>
+        <p class="text-center">
+          Youssouf is also a computer programmer with experience building
+          website, business applications, and provide IT consultancy
+          to small business.
+        </p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

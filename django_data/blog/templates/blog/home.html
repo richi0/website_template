@@ -1,0 +1,21 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+{% block content %}
+<div class='class-section container'>
+  <div class='container text-center'>
+    <img
+      class='img-fluid mb-4'
+      src="{% static 'images/insights.jpg' %}"
+    />
+  </div>
+  {% for article in object_list %}
+    <div class="shadow rounded p-4 my-3">
+        <a href="{{ article.get_absolute_url }}">
+            <h1>{{ article.title }}</h1>
+        </a>
+        <p>by {{article.author}} on {{ article.created_at|date:"D d M Y" }}</p>
+        <p>{{ article.preface|linebreaksbr }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}

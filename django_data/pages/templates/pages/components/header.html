@@ -1,0 +1,74 @@
+{% load static %}
+<nav class='navbar navbar-expand-lg navbar-light bg-white sticky-top mb-4'>
+  <div class='container-fluid'>
+    <a class='navbar-brand' href="{% url 'home' %}">
+      <img
+        src="{% static 'images/logo.png' %}"
+        alt=''
+        width='40'
+        height='40'
+      />
+      WYMCO
+    </a>
+    <button
+      class='navbar-toggler'
+      type='button'
+      data-toggle='collapse'
+      data-target='#navbarSupportedContent'
+      aria-controls='navbarSupportedContent'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+      <ul class='navbar-nav ml-auto mb-2 mb-lg-0'>
+        <li class='nav-item'>
+          <a
+            class='nav-link text-primary'
+            aria-current='page'
+            href="{% url 'home' %}"
+          >
+            Home
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a
+            class='nav-link text-primary'
+            aria-current='page'
+            href="{% url 'home' %}#services"
+          >
+            Services
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a
+            class='nav-link text-primary'
+            aria-current='page'
+            href="{% url 'home' %}#about"
+          >
+            About
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a
+            class='nav-link text-primary'
+            aria-current='page'
+            href="{% url 'home' %}#contact"
+          >
+            Contact
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a
+            class='nav-link text-primary'
+            aria-current='page'
+            href="{% url 'blog_index' %}"
+          >
+            Insights
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
