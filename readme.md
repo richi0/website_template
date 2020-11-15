@@ -69,7 +69,7 @@ git checkout deploy
 git push heroku deploy:master
 ```
 
-3. Afther the image is build run the following commands:
+3. After the image is build run the following commands:
 
 ```shell
 heroku run python manage.py makemigrations
