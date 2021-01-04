@@ -67,6 +67,7 @@ heroku stack:set container --app=<app_name>
 heroku git:remote -a <app_name>
 git checkout deploy
 git push heroku deploy:master
+heroku addons:create heroku-postgresql:hobby-dev
 ```
 
 3. After the image is build run the following commands:

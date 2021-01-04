@@ -107,11 +107,5 @@ media/
 *.db
 *.pid
 
-# Ignore Django Migrations in Development if you are working on team
-
-**/migrations/**
-!**/migrations
-!**/migrations/__init__.py
-
 **/mediafiles
 **/staticfiles
