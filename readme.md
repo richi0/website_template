@@ -73,7 +73,6 @@ heroku addons:create heroku-postgresql:hobby-dev
 3. After the image is build run the following commands:
 
 ```shell
-heroku run python manage.py makemigrations
 heroku run python manage.py migrate
 heroku run python manage.py createsuperuser
 ```
