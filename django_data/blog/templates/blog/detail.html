@@ -9,9 +9,13 @@
     <div class="text-center head-image">
         <img src="{{ object.image }}" class="img-fluid my-4 cover-image shadow-lg" alt="cover">
     </div>
-    {% for paragraph in object.paragraphs.all %}
-        <h3 class="mt-4">{{ paragraph.title }}</h3>
-        <p>{{ paragraph.content|linebreaksbr}}</p>
+    {% for text in object.get_text %}
+        {% if text.title %}
+            <h3 class="mt-4">{{ text.title }}</h3>
+            <p>{{ text.content|linebreaksbr}}</p>
+        {% else %}
+            <div>{{ text.content|safe }}</div>
+        {% endif %}
     {% endfor %}
     <div class="container text-center">
         <b>Share:</b> 

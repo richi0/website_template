@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'ckeditor',
 
 
     # Local

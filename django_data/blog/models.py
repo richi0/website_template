@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 
 class Article(models.Model):
@@ -15,6 +16,12 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('article_detail', args=[str(self.id)])
+
+    def get_text(self):
+        paragraps = self.paragraphs.all()
+        rich_text = self.richtexts.all()
+        text = list(paragraps) + list(rich_text)
+        return sorted(text, key=lambda obj: obj.order)
 
     class Meta:
         ordering = ['-created_at']
@@ -34,6 +41,19 @@ class Paragraph(models.Model):
         ordering = ['order']
 
 
+class RichText(models.Model):
+    content = RichTextField()
+    article = models.ForeignKey(
+        Article, related_name="richtexts", on_delete=models.CASCADE)
+    order = models.IntegerField()
+
+    def __str__(self):
+        return "RichText Element"
+
+    class Meta:
+        ordering = ['order']
+
+
 class Comment(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
@@ -48,5 +68,3 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['created_at']
-
-    
